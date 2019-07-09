@@ -1,0 +1,17 @@
+<div class="container" style="float:left">
+    <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li class="dropdown" *ngFor="let menu of dashMenu.menuItemList">
+            <a class="nav-link" href="#" (click)="onParentChange(menu)">
+                {{ menu.menuId + '-' + menu.name }}
+            </a>
+            <ul class="dropdown-submenu">
+                <li class="nav-item" *ngFor="let screen of menu.screens">
+                    <a class="nav-link" href="#" (click)="onScreenChange(screen)">
+                        {{ screen }}
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
